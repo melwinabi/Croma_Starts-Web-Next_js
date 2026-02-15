@@ -1,0 +1,38 @@
+# STEPS TAKEN TO PUSH "CROMA STARTS WEB" TO GITHUB
+
+This file records how we fixed the 403 errors and successfully uploaded your project.
+
+---
+
+### STEP 1: ENTER THE PROJECT FOLDER
+Command: cd ~/Documents/croma-starts-web
+
+### STEP 2: FIX THE REMOTE LINK (THE "BRIDGE")
+We had to tell the computer exactly where to send the files. We used your TOKEN inside the link so you don't have to type a password every time.
+Command:
+git remote set-url origin https://[YOUR_SECRET_TOKEN]@github.com/melwinabi/Croma_Starts-Web-Next_js.git
+
+### STEP 3: PREPARE THE FILES
+Command: git add .
+
+### STEP 4: SAVE THE CHANGES (COMMIT)
+Command: git commit -m "Initial professional setup"
+
+### STEP 5: THE GITHUB WEBSITE FIX (THE MOST IMPORTANT STEP!)
+When we got the "403 Permission Denied" error, we did this on the GitHub website:
+1. Went to 'Personal Access Tokens' in Settings.
+2. Selected your token.
+3. Changed 'Public repositories' to 'ALL repositories'.
+4. Changed 'Permissions' -> 'Repository permissions' -> 'Contents' to 'READ AND WRITE'.
+5. Clicked the green 'UPDATE' button.
+
+### STEP 6: UPLOAD EVERYTHING
+Command: git push -u origin main
+
+---
+
+### HOW TO MAKE NEW CHANGES IN THE FUTURE:
+If you edit your code and want to update GitHub, just run these 3 commands:
+1. git add .
+2. git commit -m "Updated some files"
+3. git push
