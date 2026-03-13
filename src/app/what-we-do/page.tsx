@@ -2,28 +2,41 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { Cpu, Wifi, Bot, ArrowRight, FlaskConical } from 'lucide-react';
+import { Cpu, Wifi, Bot, TrendingUp, FlaskConical, Code, Layout } from 'lucide-react';
 
-const services = [
-    {
-        title: "Embedded Synthesis",
-        icon: <Cpu size={24} />,
-        desc: "Precision engineering of high-reliability ARM hardware architectures and critical firmware logic.",
-        img: "/images/hero_bg.png",
-    },
-    {
-        title: "Industrial IoT Data Hubs",
-        icon: <Wifi size={24} />,
-        desc: "Architecting secure communication layers that bridge physical assets with world-class cloud telemetry.",
-        img: "/images/iot.png",
-    },
-    {
-        title: "Autonomous Motion Control",
-        icon: <Bot size={24} />,
-        desc: "Next-generation robotics with advanced kinematics, computer vision, and AI-driven precision.",
-        img: "/images/robotics.png",
-    }
-];
+const services =
+    [
+        {
+            title: "Embedded Synthesis",
+            icon: <Cpu size={24} />,
+            desc: "Precision engineering of high-reliability ARM hardware architectures and critical firmware logic.",
+            img: "/images/hero_bg.png",
+        },
+        {
+            title: "Industrial IoT Data Hubs",
+            icon: <Wifi size={24} />,
+            desc: "Architecting secure communication layers that bridge physical assets with world-class cloud telemetry.",
+            img: "/images/iot.png",
+        },
+        {
+            title: "Autonomous Motion Control",
+            icon: <Bot size={24} />,
+            desc: "Next-generation robotics with advanced kinematics, computer vision, and AI-driven precision.",
+            img: "/images/robotics.png",
+        },
+        {
+            title: "Digital Performance Strategy",
+            icon: <TrendingUp size={24} />,
+            desc: "Transforming industrial entities into digital leaders through relentless data optimization and world-class brand storytelling.",
+            img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=2026",
+        },
+        {
+            title: "Full-Stack Software Architecture",
+            icon: <Code size={24} />,
+            desc: "Engineering scalable web ecosystems and enterprise software solutions designed for high-stakes industrial environments. We bridge the gap between complex data and intuitive user experiences.",
+            img: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=2070",
+        }
+    ];
 
 export default function WhatWeDo() {
     return (
@@ -88,8 +101,18 @@ export default function WhatWeDo() {
                                     <p style={{ fontSize: 'clamp(1.1rem, 3vw, 1.25rem)', color: 'var(--text-muted)', lineHeight: 1.8, marginBottom: '2.5rem' }}>
                                         {service.desc}
                                     </p>
-                                    <span style={{ fontWeight: 800, color: 'var(--primary)', display: 'flex', alignItems: 'center', gap: '0.8rem', cursor: 'pointer', fontSize: '1rem', textTransform: 'uppercase', letterSpacing: '1px' }}>
-                                        Technical Audit <ArrowRight size={20} />
+                                    <span style={{
+                                        fontWeight: 800,
+                                        color: service.title.includes("Digital") ? "#6366f1" : (service.title.includes("Software") ? "#10b981" : "var(--primary)"),
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        gap: '0.8rem',
+                                        cursor: 'pointer',
+                                        fontSize: '1rem',
+                                        textTransform: 'uppercase',
+                                        letterSpacing: '1px'
+                                    }}>
+                                        {service.title.includes("Software") ? "Inquire System" : "Growth Audit"} <TrendingUp size={20} />
                                     </span>
                                 </div>
                             </motion.div>

@@ -2,7 +2,7 @@
 
 import Hero from '@/components/Hero';
 import { motion } from 'framer-motion';
-import { Cpu, Wifi, Bot, Zap, ArrowRight } from 'lucide-react';
+import { Cpu, Wifi, Bot, Zap, ArrowRight, TrendingUp, Code } from 'lucide-react';
 import Link from 'next/link';
 
 const technologies = [
@@ -29,6 +29,18 @@ const technologies = [
     title: "Energy Management",
     desc: "Optimizing high-efficiency power distribution for heavy industrial hardware platforms.",
     items: ["BMS Engineering", "Thermal Analysis", "Power Distribution"]
+  },
+  {
+    icon: <TrendingUp size={32} />,
+    title: "Digital Growth & Marketing",
+    desc: "Accelerating industrial brands through data-centric digital strategy and high-impact positioning.",
+    items: ["Performance Marketing", "Social Media Handling", "Brand Architecture", "Growth Analytics"]
+  },
+  {
+    icon: <Code size={32} />,
+    title: "Software Solutions",
+    desc: "Architecting robust web and enterprise software systems to streamline industrial operations.",
+    items: ["Web Development", "UI/UX Design", "Cloud Infrastructure", "Custom ERP"]
   }
 ];
 
@@ -37,7 +49,6 @@ export default function Home() {
     <main>
       <Hero />
 
-      {/* Core Capabilities */}
       <section className="section-padding">
         <div className="container">
           <motion.div
@@ -90,7 +101,40 @@ export default function Home() {
 
       {/* Industrial Banner */}
       <section style={{ paddingBottom: '120px' }}>
-        <div className="container">
+        <div className="container" style={{ display: 'flex', flexDirection: 'column', gap: '80px' }}>
+          {/* Trust Metrics Moved Here */}
+          <div style={{ display: 'flex', justifyContent: 'center', gap: 'clamp(2rem, 10vw, 8rem)', flexWrap: 'wrap' }}>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              style={{ textAlign: 'center' }}
+            >
+              <h3 style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', fontWeight: 800, color: 'var(--primary)' }}>34+</h3>
+              <p style={{ fontSize: '0.9rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '2px', opacity: 0.6 }}>Trusted Customers</p>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              style={{ textAlign: 'center' }}
+            >
+              <h3 style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', fontWeight: 800, color: 'var(--primary)' }}>58+</h3>
+              <p style={{ fontSize: '0.9rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '2px', opacity: 0.6 }}>Projects Delivered</p>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              style={{ textAlign: 'center' }}
+            >
+              <h3 style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', fontWeight: 800, color: 'var(--primary)' }}>99.9%</h3>
+              <p style={{ fontSize: '0.9rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '2px', opacity: 0.6 }}>Success Logic</p>
+            </motion.div>
+          </div>
+
           <motion.div
             initial={{ opacity: 0, scale: 0.98 }}
             whileInView={{ opacity: 1, scale: 1 }}

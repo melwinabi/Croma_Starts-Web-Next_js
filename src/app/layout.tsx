@@ -6,7 +6,7 @@ import CustomCursor from "@/components/CustomCursor";
 
 export const metadata: Metadata = {
   title: "Croma Starts | Premier R&D Platform",
-  description: "Professional Embedded, IoT, Robotics, Electronics, and Electrical R&D Platform.",
+  description: "A Professional Research & Development Platform Specializing in Embedded Systems, IoT, Robotics, Electronics, Software, and Electrical Engineering Solutions."
 };
 
 export default function RootLayout({

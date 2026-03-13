@@ -22,7 +22,8 @@ const Navbar = () => {
         { name: 'Home', path: '/' },
         { name: 'Solutions', path: '/what-we-do' },
         { name: 'About', path: '/about' },
-        { name: 'Students', path: '/career-guidance' },
+        { name: 'Career', path: '/career' },
+        { name: 'Login', path: '/login' },
     ];
 
     return (
@@ -33,10 +34,10 @@ const Navbar = () => {
                 left: 0,
                 right: 0,
                 zIndex: 1000,
-                padding: isScrolled ? '0.75rem 0' : '1.5rem 0',
-                transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+                padding: isScrolled ? '0.75rem 0' : '1.2rem 0',
+                transition: 'all 0.5s cubic-bezier(0.16, 1, 0.3, 1)',
                 background: isScrolled ? 'rgba(253, 251, 247, 0.85)' : 'transparent',
-                backdropFilter: isScrolled ? 'blur(15px)' : 'none',
+                backdropFilter: isScrolled ? 'blur(20px)' : 'none',
                 borderBottom: isScrolled ? '1px solid rgba(15, 23, 42, 0.05)' : '1px solid transparent'
             }}
         >
@@ -53,6 +54,7 @@ const Navbar = () => {
                             alt="Croma Starts Logo"
                             fill
                             style={{ objectFit: 'contain' }}
+                            sizes="45px"
                         />
                     </div>
                     <span className="font-display" style={{
@@ -74,7 +76,12 @@ const Navbar = () => {
                         <Link key={link.name} href={link.path}>
                             <motion.span
                                 whileHover={{ color: 'var(--primary)', y: -2 }}
-                                style={{ fontWeight: 600, fontSize: '0.9rem', color: 'var(--text-main)', opacity: 0.8 }}
+                                style={{
+                                    fontWeight: 600,
+                                    fontSize: '0.9rem',
+                                    color: 'var(--text-main)',
+                                    opacity: isScrolled ? 0.8 : 0.9
+                                }}
                             >
                                 {link.name}
                             </motion.span>
@@ -90,8 +97,8 @@ const Navbar = () => {
                     onClick={() => setIsOpen(!isOpen)}
                     className="mobile-only"
                     style={{
-                        background: 'rgba(15, 23, 42, 0.05)',
-                        border: '1px solid rgba(15, 23, 42, 0.1)',
+                        background: isScrolled ? 'rgba(15, 23, 42, 0.05)' : 'rgba(255, 255, 255, 0.1)',
+                        border: '1px solid ' + (isScrolled ? 'rgba(15, 23, 42, 0.1)' : 'rgba(255, 255, 255, 0.2)'),
                         cursor: 'pointer',
                         color: 'var(--text-main)',
                         padding: '10px',

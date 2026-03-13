@@ -2,7 +2,8 @@
 
 import { motion, Variants } from 'framer-motion';
 import Link from 'next/link';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, ArrowUpRight } from 'lucide-react';
+import CircuitAnimation from './CircuitAnimation';
 
 const Hero = () => {
     const containerVars: Variants = {
@@ -32,9 +33,32 @@ const Hero = () => {
             alignItems: 'center',
             paddingTop: '100px',
             position: 'relative',
-            overflow: 'hidden'
+            overflow: 'hidden',
+            background: 'var(--bg-dark)'
         }}>
-            <div className="container">
+            {/* Clean Background with Subtle Gradient and Animation */}
+            <div style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '100%',
+                zIndex: 0,
+                background: 'radial-gradient(circle at 70% 30%, rgba(255, 184, 0, 0.04) 0%, transparent 70%)',
+            }}>
+                <CircuitAnimation />
+                <div style={{
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    width: '100%',
+                    height: '100%',
+                    background: 'linear-gradient(to bottom, transparent 40%, #FDFBF7 100%)',
+                    opacity: 0.75
+                }} />
+            </div>
+
+            <div className="container" style={{ position: 'relative', zIndex: 1 }}>
                 <motion.div
                     variants={containerVars}
                     initial="hidden"
@@ -47,15 +71,17 @@ const Hero = () => {
                             display: 'inline-flex',
                             alignItems: 'center',
                             gap: '10px',
-                            padding: '8px 20px',
+                            padding: '10px 24px',
                             borderRadius: '100px',
-                            background: 'rgba(255, 184, 0, 0.08)',
-                            border: '1px solid rgba(255, 184, 0, 0.3)',
+                            background: 'rgba(255, 184, 0, 0.15)',
+                            border: '1px solid rgba(255, 184, 0, 0.45)',
                             marginBottom: '2.5rem',
+                            backdropFilter: 'blur(10px)',
+                            boxShadow: '0 4px 15px rgba(255, 184, 0, 0.05)'
                         }}
                     >
                         <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: 'var(--primary)', display: 'block' }} />
-                        <span style={{ fontSize: '0.85rem', fontWeight: 800, color: 'var(--primary)', textTransform: 'uppercase', letterSpacing: '2px' }}>
+                        <span style={{ fontSize: '0.9rem', fontWeight: 800, color: '#B47B00', textTransform: 'uppercase', letterSpacing: '2px' }}>
                             Pioneering Industrial R&D
                         </span>
                     </motion.div>
@@ -80,9 +106,11 @@ const Hero = () => {
                         style={{
                             fontSize: 'clamp(1rem, 4vw, 1.3rem)',
                             color: 'var(--text-muted)',
+                            opacity: 0.9,
                             marginBottom: '3.5rem',
                             lineHeight: 1.6,
-                            maxWidth: '650px'
+                            maxWidth: '650px',
+                            fontWeight: 500,
                         }}
                     >
                         Elite R&D synthesis across Embedded Systems, IoT connectivity, and
@@ -96,8 +124,18 @@ const Hero = () => {
                         <Link href="/what-we-do" className="btn-primary" style={{ padding: '20px 45px' }}>
                             Our Portfolio <ArrowRight size={20} />
                         </Link>
-                        <Link href="/contact" className="btn-outline" style={{ padding: '20px 45px' }}>
-                            Scientific Inquiry
+                        <Link href="/contact" style={{
+                            padding: '20px 45px',
+                            background: 'transparent',
+                            color: 'var(--text-main)',
+                            borderRadius: '12px',
+                            fontWeight: 700,
+                            border: '1px solid rgba(15, 23, 42, 0.2)',
+                            display: 'inline-flex',
+                            alignItems: 'center',
+                            gap: '10px'
+                        }}>
+                            Scientific Inquiry <ArrowUpRight size={20} />
                         </Link>
                     </motion.div>
                 </motion.div>
